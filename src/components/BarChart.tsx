@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BarChart as RechartsBarChart, 
   Bar, 
@@ -21,6 +20,8 @@ interface BarChartProps {
   height?: number;
   showLegend?: boolean;
   tooltipFormatter?: (value: number) => string;
+  valueScale?: [number, number]; // Agregar propiedad para escala de valores
+  isPercentage?: boolean; // Agregar propiedad para indicar si son porcentajes
 }
 
 export function BarChart({
@@ -33,8 +34,22 @@ export function BarChart({
   subtitle,
   height = 300,
   showLegend = true,
-  tooltipFormatter = (value) => `${value}%`,
+  tooltipFormatter, // Usando parámetro directo en lugar de valor por defecto
+  valueScale, // Nueva propiedad para la escala del eje Y
+  isPercentage = true, // Por defecto asumimos porcentajes para mantener compatibilidad
 }: BarChartProps) {
+  
+  // Si no se proporciona un formateador personalizado, usar el predeterminado según el tipo de datos
+  const defaultFormatter = (value: number) => {
+    if (isPercentage) {
+      return `${value}%`;
+    }
+    return `${value}`;
+  };
+  
+  // Usar el formateador proporcionado o el predeterminado
+  const formatter = tooltipFormatter || defaultFormatter;
+  
   return (
     <div className={cn("w-full rounded-lg border bg-card p-4", className)}>
       {(title || subtitle) && (
@@ -53,14 +68,14 @@ export function BarChart({
             tickLine={false}
           />
           <YAxis 
-            tickFormatter={(value) => `${value}%`} 
-            domain={[0, 100]} 
+            tickFormatter={(value) => isPercentage ? `${value}%` : `${value}`} 
+            domain={valueScale || (isPercentage ? [0, 100] : [0, 5])} // Usar la escala proporcionada o una predeterminada
             axisLine={false} 
             tickLine={false}
             tick={{ fontSize: 12 }}
           />
           <Tooltip 
-            formatter={tooltipFormatter}
+            formatter={formatter}
             contentStyle={{ borderRadius: '8px', padding: '8px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}
           />
           {showLegend && <Legend wrapperStyle={{ paddingTop: '10px', fontSize: '12px' }} />}
