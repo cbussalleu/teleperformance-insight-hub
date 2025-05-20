@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -14,9 +13,6 @@ import Factores from "./pages/Factores";
 import RSE from "./pages/RSE";
 import Competencia from "./pages/Competencia";
 import Reposicionamiento from "./pages/Reposicionamiento";
-// Probablemente necesitarás crear estas páginas que faltan:
-// import Industria from "./pages/Industria";
-// import Conclusiones from "./pages/Conclusiones";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -38,7 +34,6 @@ const App = () => (
           <Route path="/rse" element={<RSE />} />
           <Route path="/competencia" element={<Competencia />} />
           <Route path="/reposicionamiento" element={<Reposicionamiento />} />
-          {/* Descomenta cuando crees estas páginas:
           <Route path="/industria" element={<Industria />} />
           <Route path="/conclusiones" element={<Conclusiones />} />
           */}
