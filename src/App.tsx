@@ -16,7 +16,6 @@ import Reposicionamiento from "./pages/Reposicionamiento";
 // import Industria from "./pages/Industria";
 // import Conclusiones from "./pages/Conclusiones";
 import NotFound from "./pages/NotFound";
-
 const queryClient = new QueryClient();
 
 const App = () => (
