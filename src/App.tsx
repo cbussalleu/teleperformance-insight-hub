@@ -13,6 +13,8 @@ import Factores from "./pages/Factores";
 import RSE from "./pages/RSE";
 import Competencia from "./pages/Competencia";
 import Reposicionamiento from "./pages/Reposicionamiento";
+// import Industria from "./pages/Industria";
+// import Conclusiones from "./pages/Conclusiones";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +36,7 @@ const App = () => (
           <Route path="/rse" element={<RSE />} />
           <Route path="/competencia" element={<Competencia />} />
           <Route path="/reposicionamiento" element={<Reposicionamiento />} />
+          {/* 
           <Route path="/industria" element={<Industria />} />
           <Route path="/conclusiones" element={<Conclusiones />} />
           */}
