@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { RadarChart as RechartsRadarChart, 
   PolarGrid, 
@@ -34,7 +33,7 @@ export function RadarChart({
   showLegend = true,
 }: RadarChartProps) {
   return (
-    <div className={cn("w-full rounded-lg border bg-card p-4", className)}>
+    <div className={cn("w-full rounded-lg", className)}>
       {(title || subtitle) && (
         <div className="mb-4">
           {title && <h3 className="text-lg font-semibold">{title}</h3>}
@@ -45,10 +44,10 @@ export function RadarChart({
         <RechartsRadarChart outerRadius={90} data={data}>
           <PolarGrid />
           <PolarAngleAxis dataKey={angleDataKey} />
-          <PolarRadiusAxis angle={30} domain={[0, 100]} />
+          <PolarRadiusAxis angle={30} domain={[0, 5]} />
           <Tooltip 
             contentStyle={{ borderRadius: '8px', padding: '8px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}
-            formatter={(value) => [`${value}%`]}
+            formatter={(value) => [`${value}`]}
           />
           {showLegend && <Legend wrapperStyle={{ paddingTop: '10px', fontSize: '12px' }} />}
           
