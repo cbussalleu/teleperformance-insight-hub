@@ -73,11 +73,14 @@ export default function Industria() {
           </CardHeader>
           <CardContent>
             <BarChart 
-              data={industryRepositioningData} 
-              keys={['Nearshore', 'Domestic']} 
-              subtitle="Capacidad percibida para transformación (1-5)" 
-              height={400}
-            />
+  data={industryRepositioningData} 
+  keys={['Nearshore', 'Domestic']} 
+  subtitle="Capacidad percibida para transformación (1-5)" 
+  height={400}
+  isPercentage={false}
+  valueScale={[0, 5]}
+  tooltipFormatter={(value) => `${value.toFixed(1)}`}
+/>
             <div className="mt-4 text-sm">
               <p className="mb-2">Análisis por industria:</p>
               <ul className="list-disc pl-6 space-y-1">
