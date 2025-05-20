@@ -17,7 +17,6 @@ const industryData = [
   { industry: 'Viajes/Hospitalidad', satisfaction: 5.0, repositioning: 5.0, segment: 'Domestic' },
   { industry: 'Automotriz', satisfaction: 5.0, repositioning: 5.0, segment: 'Domestic' },
 ];
-
 // Datos reposicionamiento por industria
 const industryRepositioningData = [
   { name: 'Viajes/Hospitalidad', Domestic: 5.0, Nearshore: 0 },
