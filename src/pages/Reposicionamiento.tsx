@@ -4,16 +4,13 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BarChart } from '@/components/BarChart';
 import { StatCard } from '@/components/StatCard';
 
-// Datos de categorías para posicionamiento futuro
 const futurePositioningData = [
   { name: 'Transformación digital', Nearshore: 56, Domestic: 75 },
   { name: 'Soluciones tecnológicas', Nearshore: 44, Domestic: 75 },
   { name: 'Experiencia del cliente', Nearshore: 33, Domestic: 0 },
   { name: 'Socio integral', Nearshore: 11, Domestic: 25 },
-  { name: 'Sin respuesta', Nearshore: 22, Domestic: 0 },
 ];
 
-// Datos de barreras para reposicionamiento
 const repositioningBarriersData = [
   { name: 'Percepción call center', Nearshore: 56, Domestic: 75 },
   { name: 'Conocimiento insuficiente', Nearshore: 44, Domestic: 0 },
@@ -22,7 +19,6 @@ const repositioningBarriersData = [
   { name: 'Falta credenciales', Nearshore: 11, Domestic: 50 },
 ];
 
-// Datos de drivers para reposicionamiento
 const repositioningDriversData = [
   { name: 'Propuestas innovadoras', Nearshore: 67, Domestic: 75 },
   { name: 'Casos de éxito', Nearshore: 44, Domestic: 25 },
@@ -30,16 +26,12 @@ const repositioningDriversData = [
   { name: 'Capacidades tecnológicas', Nearshore: 11, Domestic: 75 },
 ];
 
-// Datos de capacidad para afrontar retos transformativos
 const transformativeCapacityData = [
-  { name: '5/5', Nearshore: 22, Domestic: 50 },
-  { name: '4/5', Nearshore: 56, Domestic: 25 },
-  { name: '3/5', Nearshore: 22, Domestic: 25 },
-  { name: '2/5', Nearshore: 0, Domestic: 0 },
-  { name: '1/5', Nearshore: 0, Domestic: 0 },
+  { name: '5/5', Nearshore: 22, Domestic: 40 },
+  { name: '4/5', Nearshore: 56, Domestic: 40 },
+  { name: '3/5', Nearshore: 22, Domestic: 20 },
 ];
 
-// Datos de asociación con áreas estratégicas
 const strategicAreasAssociationData = [
   { name: 'Soluciones integrales', Nearshore: 50, Domestic: 75 },
   { name: 'Tecnología avanzada', Nearshore: 38, Domestic: 75 },
@@ -55,21 +47,21 @@ export default function Reposicionamiento() {
           <StatCard 
             title="Capacidad Transformativa" 
             value="4.1/5" 
-            description="Promedio general" 
+            description="Calificación promedio de capacidad para retos transformativos" 
             trend="up"
             trendValue="4.3/5 Domestic"
           />
           <StatCard 
-            title="Transformación Digital" 
-            value="62%" 
-            description="Principal categoría reposicionamiento" 
+            title="Categoría Principal" 
+            value="63%" 
+            description="Transformación digital - Categoría con mayor potencial" 
             trend="up"
             trendValue="75% Domestic"
           />
           <StatCard 
-            title="Propuestas Innovadoras" 
-            value="69%" 
-            description="Principal driver reposicionamiento" 
+            title="Driver Principal" 
+            value="70%" 
+            description="Propuestas innovadoras - Factor clave para reposicionamiento" 
             trend="up"
             trendValue="75% Domestic"
           />
@@ -89,11 +81,35 @@ export default function Reposicionamiento() {
             <div className="mt-4 text-sm">
               <p className="mb-2">Análisis de categorías para reposicionamiento:</p>
               <ul className="list-disc pl-6 space-y-1">
-                <li>Ambos segmentos coinciden en las dos principales categorías de posicionamiento futuro: "Transformación digital" (56% Nearshore, 75% Domestic) y "Soluciones tecnológicas avanzadas" (44% Nearshore, 75% Domestic).</li>
-                <li>Existe mayor consenso entre los clientes Domestic sobre estas categorías, con 75% seleccionando ambas opciones.</li>
-                <li>La "Experiencia del cliente" es valorada solo por clientes Nearshore (33% vs 0%), mientras "Socio integral" tiene baja selección en ambos segmentos (11% Nearshore, 25% Domestic).</li>
-                <li>Un 22% de clientes Nearshore no identificó una categoría clara de posicionamiento futuro (vs 0% en Domestic), sugiriendo mayor claridad en la visión de los clientes Domestic.</li>
+                <li><strong>Consenso en transformación digital:</strong> 63% promedio (56% Nearshore, 75% Domestic), categoría principal para reposicionamiento.</li>
+                <li><strong>Soluciones tecnológicas igualmente prometedoras:</strong> 54% promedio con same pattern de preferencia en Domestic.</li>
+                <li><strong>Experiencia cliente únicamente Nearshore:</strong> 33% vs 0%, sugiriendo diferente valoración de esta capacidad.</li>
+                <li><strong>Socio integral mayor en Domestic:</strong> 25% vs 11%, alineado con mayor receptividad consultiva.</li>
               </ul>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Barreras Organizacionales Nuevas</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+              <div className="p-4 border rounded-lg bg-amber-50 border-amber-200">
+                <h4 className="font-semibold text-amber-800 mb-2">Restricciones Confidencialidad</h4>
+                <p className="text-sm text-amber-700">Identificada en caso Virpool: Políticas internas limitan compartir datos para analytics avanzados</p>
+              </div>
+              
+              <div className="p-4 border rounded-lg bg-blue-50 border-blue-200">
+                <h4 className="font-semibold text-blue-800 mb-2">Cultura Organizacional Conservadora</h4>
+                <p className="text-sm text-blue-700">Preferencia por experiencia histórica probada vs innovación no solicitada</p>
+              </div>
+              
+              <div className="p-4 border rounded-lg bg-purple-50 border-purple-200">
+                <h4 className="font-semibold text-purple-800 mb-2">Silos Internos en TP</h4>
+                <p className="text-sm text-purple-700">Falta cross-pollination entre regiones limita compartir innovaciones</p>
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -112,11 +128,10 @@ export default function Reposicionamiento() {
             <div className="mt-4 text-sm">
               <p className="mb-2">Análisis de barreras para reposicionamiento:</p>
               <ul className="list-disc pl-6 space-y-1">
-                <li>La "Percepción histórica como call center" es la principal barrera para ambos segmentos (56% Nearshore, 75% Domestic), representando un desafío fundamental para el reposicionamiento.</li>
-                <li>Los clientes Domestic identifican con mayor frecuencia "Limitaciones en talento especializado" como barrera crítica (75% vs no mencionado en Nearshore), sugiriendo un área de inversión prioritaria.</li>
-                <li>La "Falta de credenciales" es más mencionada por clientes Domestic (50% vs 11%), indicando mayor exigencia de casos demostrados.</li>
-                <li>Los clientes Nearshore destacan el "Conocimiento insuficiente del portafolio" (44% vs 0%), señalando una oportunidad de comunicación de capacidades.</li>
-                <li>La "Competencia establecida" representa una barrera similar para ambos segmentos (33% Nearshore, 25% Domestic).</li>
+                <li><strong>Percepción call center dominante:</strong> 63% promedio (56% Nearshore, 75% Domestic), barrera principal a superar.</li>
+                <li><strong>Talento especializado crítico en Domestic:</strong> 75% vs 0% Nearshore, área de inversión prioritaria.</li>
+                <li><strong>Credenciales más exigidas en Domestic:</strong> 50% vs 11%, requiere casos demostrados específicos.</li>
+                <li><strong>Conocimiento insuficiente únicamente Nearshore:</strong> 44% vs 0%, oportunidad de comunicación de capacidades.</li>
               </ul>
             </div>
           </CardContent>
@@ -136,10 +151,10 @@ export default function Reposicionamiento() {
             <div className="mt-4 text-sm">
               <p className="mb-2">Análisis de drivers para reposicionamiento:</p>
               <ul className="list-disc pl-6 space-y-1">
-                <li>Las "Propuestas innovadoras específicas para la industria" son el principal driver para ambos segmentos (67% Nearshore, 75% Domestic), destacando la importancia de soluciones a medida.</li>
-                <li>Los clientes Domestic enfatizan mucho más la "Mejora en capacidades tecnológicas" (75% vs 11%), consistente con su visión más tecnológica del posicionamiento.</li>
-                <li>Los clientes Nearshore valoran más la "Demostración de casos de éxito" (44% vs 25%), sugiriendo mayor necesidad de pruebas tangibles.</li>
-                <li>El "Mayor conocimiento del sector" es valorado de manera diferencial (33% Nearshore, 50% Domestic), siendo más importante para Domestic.</li>
+                <li><strong>Propuestas innovadoras como driver principal:</strong> 70% promedio (67% Nearshore, 75% Domestic), confirma importancia de proactividad.</li>
+                <li><strong>Capacidades tecnológicas críticas en Domestic:</strong> 75% vs 11% Nearshore, consistent con percepción tecnológica.</li>
+                <li><strong>Casos de éxito más valorados en Nearshore:</strong> 44% vs 25%, sugiere mayor necesidad de pruebas tangibles.</li>
+                <li><strong>Conocimiento sectorial equilibrado:</strong> 39% promedio, importante para ambos segmentos.</li>
               </ul>
             </div>
           </CardContent>
@@ -155,15 +170,16 @@ export default function Reposicionamiento() {
               keys={['Nearshore', 'Domestic']} 
               subtitle="Valoración de la capacidad transformativa (escala 1-5)" 
               height={300}
+              isPercentage={false}
+              valueScale={[0, 100]}
             />
             <div className="mt-4 text-sm">
               <p className="mb-2">Análisis de capacidad transformativa:</p>
               <ul className="list-disc pl-6 space-y-1">
-                <li>La percepción general de la capacidad transformativa de Teleperformance es positiva, con una calificación promedio de 4.1/5 (4.0/5 Nearshore, 4.3/5 Domestic).</li>
-                <li>Los clientes Domestic perciben mayor capacidad transformativa en TP, con 50% otorgando la calificación máxima de 5/5 (vs 22% en Nearshore).</li>
-                <li>La mayoría de clientes Nearshore (56%) califica la capacidad transformativa como 4/5, mostrando una percepción positiva pero no máxima.</li>
-                <li>Ningún cliente califica por debajo de 3/5, lo que indica una base sólida de confianza en las capacidades de TP.</li>
-                <li>Un porcentaje similar en ambos segmentos (22% Nearshore, 25% Domestic) califica la capacidad transformativa como 3/5, sugiriendo oportunidades de mejora.</li>
+                <li><strong>Capacidad sólida reconocida:</strong> 4.1/5 promedio (4.0/5 Nearshore, 4.3/5 Domestic) proporciona base de credibilidad.</li>
+                <li><strong>Domestic más optimista:</strong> 40% calificación máxima vs 22% Nearshore, mayor confianza en capacidades transformativas.</li>
+                <li><strong>Nearshore consistentemente positivo:</strong> 56% califica 4/5, showing solid but not maximum confidence.</li>
+                <li><strong>Sin calificaciones negativas:</strong> Ningún cliente por debajo de 3/5, indicates foundational trust.</li>
               </ul>
             </div>
           </CardContent>
@@ -183,95 +199,11 @@ export default function Reposicionamiento() {
             <div className="mt-4 text-sm">
               <p className="mb-2">Análisis de asociación con áreas estratégicas:</p>
               <ul className="list-disc pl-6 space-y-1">
-                <li>La asociación con áreas estratégicas es significativamente más alta en clientes Domestic que en Nearshore para todas las áreas evaluadas.</li>
-                <li>Las "Soluciones integrales de negocio" muestran la mayor asociación en ambos segmentos (50% Nearshore, 75% Domestic).</li>
-                <li>"Tecnología avanzada" y "Transformación digital" muestran idénticos niveles de asociación (38% Nearshore, 75% Domestic), reflejando una percepción consistente.</li>
-                <li>La "Consultoría estratégica" muestra la menor asociación en ambos segmentos (13% Nearshore, 25% Domestic), representando el mayor desafío para el reposicionamiento completo.</li>
-                <li>La brecha entre segmentos es particularmente amplia en "Tecnología avanzada" y "Transformación digital" (37 puntos porcentuales), áreas clave para el reposicionamiento deseado.</li>
+                <li><strong>Domestic significativamente más alto:</strong> 75% vs ~40% Nearshore en todas las áreas clave, indicating much stronger foundation.</li>
+                <li><strong>Soluciones integrales lideran:</strong> Mejor asociación en ambos segmentos (50% Nearshore, 75% Domestic).</li>
+                <li><strong>Tecnología y transformación digital igualadas:</strong> 38% Nearshore, 75% Domestic, core areas for repositioning.</li>
+                <li><strong>Consultoría estratégica como desafío:</strong> Menor asociación (13% Nearshore, 25% Domestic), requiring most development work.</li>
               </ul>
-            </div>
-          </CardContent>
-        </Card>
-        
-        <Card>
-          <CardHeader>
-            <CardTitle>Análisis por Industria</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse">
-                <thead>
-                  <tr className="border-b">
-                    <th className="text-left p-2">Industria</th>
-                    <th className="text-left p-2">Segmento</th>
-                    <th className="text-left p-2">Capacidad (1-5)</th>
-                    <th className="text-left p-2">Categoría Principal</th>
-                    <th className="text-left p-2">Barrera Principal</th>
-                    <th className="text-left p-2">Driver Principal</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b">
-                    <td className="p-2">Retail/E-commerce</td>
-                    <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-purple text-white">Nearshore</span></td>
-                    <td className="p-2">4/5</td>
-                    <td className="p-2">Socio integral</td>
-                    <td className="p-2">Competencia establecida</td>
-                    <td className="p-2">Casos de éxito</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="p-2">Media/Entertainment</td>
-                    <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-purple text-white">Nearshore</span></td>
-                    <td className="p-2">4/5</td>
-                    <td className="p-2">Experiencia cliente</td>
-                    <td className="p-2">Percepción call center</td>
-                    <td className="p-2">Propuestas innovadoras</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="p-2">Technology</td>
-                    <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-purple text-white">Nearshore</span></td>
-                    <td className="p-2">3/5</td>
-                    <td className="p-2">Soluciones tecnológicas</td>
-                    <td className="p-2">Conocimiento insuficiente</td>
-                    <td className="p-2">Capacidades tecnológicas</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="p-2">Energy/Utilities</td>
-                    <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-purple text-white">Nearshore</span></td>
-                    <td className="p-2">4/5</td>
-                    <td className="p-2">Transformación digital</td>
-                    <td className="p-2">Percepción call center</td>
-                    <td className="p-2">Conocimiento sector</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="p-2">Viajes/Hospitalidad</td>
-                    <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-magenta text-white">Domestic</span></td>
-                    <td className="p-2">5/5</td>
-                    <td className="p-2">Transformación digital</td>
-                    <td className="p-2">Talento especializado</td>
-                    <td className="p-2">Propuestas innovadoras</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="p-2">Automotriz</td>
-                    <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-magenta text-white">Domestic</span></td>
-                    <td className="p-2">5/5</td>
-                    <td className="p-2">Soluciones tecnológicas</td>
-                    <td className="p-2">Percepción call center</td>
-                    <td className="p-2">Capacidades tecnológicas</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="p-2">FMCG</td>
-                    <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-magenta text-white">Domestic</span></td>
-                    <td className="p-2">3/5</td>
-                    <td className="p-2">Socio integral</td>
-                    <td className="p-2">Falta credenciales</td>
-                    <td className="p-2">Casos de éxito</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div className="mt-4 text-sm">
-              <p>Las industrias con mayor credibilidad para el reposicionamiento son Viajes/Hospitalidad y Automotriz (Domestic), con capacidad transformativa máxima (5/5) y clara orientación hacia transformación digital y soluciones tecnológicas respectivamente.</p>
             </div>
           </CardContent>
         </Card>
@@ -284,34 +216,27 @@ export default function Reposicionamiento() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="p-4 border rounded-lg bg-gradient-to-br from-white to-gray-50">
                 <h4 className="font-semibold mb-2">Categorías con mayor potencial</h4>
-                <p className="mb-2">Las categorías de "Transformación digital" (62%) y "Soluciones tecnológicas avanzadas" (54%) emergen como las áreas con mayor potencial para el reposicionamiento, con apoyo significativo en ambos segmentos.</p>
-                <p>Estas categorías presentan mejor oportunidad que "Consultoría estratégica", que muestra baja asociación actual (13-25%).</p>
+                <p className="mb-2">"Transformación digital" (63%) y "Soluciones tecnológicas" (54%) emergen claramente como áreas con mayor potencial, especialmente fuertes en Domestic (75% each).</p>
+                <p>Estas categorías presentan mejor oportunidad que "Consultoría estratégica" que muestra menor asociación actual (13-25%).</p>
               </div>
               
               <div className="p-4 border rounded-lg bg-gradient-to-br from-white to-gray-50">
                 <h4 className="font-semibold mb-2">Principales barreras a superar</h4>
-                <p className="mb-2">La "Percepción histórica como call center" representa la principal barrera (62%), seguida por "Limitaciones en talento especializado" (31%) para Domestic.</p>
-                <p>El reposicionamiento debe abordar explícitamente estas percepciones y considerar inversiones en talento especializado.</p>
+                <p className="mb-2">La "Percepción call center" (63% promedio) remains primary barrier, complemented by "Talento especializado" limitations in Domestic (75%).</p>
+                <p>New organizational barriers include confidentiality restrictions and conservative culture requiring adaptive approaches.</p>
               </div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-              <div className="p-4 border rounded-lg bg-gradient-to-br from-white to-gray-50">
-                <h4 className="font-semibold mb-2">Drivers clave</h4>
-                <p className="mb-2">Las "Propuestas innovadoras específicas para la industria" (69%) y la "Demostración de casos de éxito" (38%) son los principales drivers para el reposicionamiento.</p>
-                <p>La estrategia debe enfocarse en propuestas a medida para cada industria y en documentar y comunicar casos exitosos donde TP ha ido más allá del rol tradicional.</p>
-              </div>
-              
-              <div className="p-4 border rounded-lg bg-gradient-to-br from-white to-gray-50">
-                <h4 className="font-semibold mb-2">Enfoque segmentado</h4>
-                <p className="mb-2">La asociación con áreas estratégicas es significativamente más alta en clientes Domestic, especialmente en "Tecnología avanzada" y "Transformación digital" (75% vs 38%).</p>
-                <p>Esto sugiere que el segmento Domestic ofrece terreno más fértil para el reposicionamiento inicial, mientras que el enfoque para Nearshore debe ser más gradual.</p>
-              </div>
+            <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+              <h4 className="font-semibold text-green-800 mb-2">Estrategia Recomendada</h4>
+              <p className="text-green-700">
+                <strong>Enfoque dual segmentado:</strong> Priorizar Domestic donde la asociación con áreas estratégicas es 
+                significativamente mayor (75% vs ~40% Nearshore). Para Domestic: enfocarse en "Transformación digital" y 
+                "Soluciones tecnológicas" donde ya existe alta asociación. Para Nearshore: desarrollar gradualmente desde 
+                la base actual (40% en soluciones integrales) hacia capacidades más avanzadas. La estrategia debe incluir 
+                desarrollo urgente de talento especializado para Domestic y programa de comunicación de capacidades para Nearshore.
+              </p>
             </div>
-            
-            <p className="mt-4">
-              Existe una clara oportunidad para el reposicionamiento de Teleperformance, especialmente en las categorías de "Transformación digital" y "Soluciones tecnológicas avanzadas". La capacidad transformativa percibida es sólida (4.1/5 promedio), proporcionando una base de credibilidad para este cambio. El enfoque debe ser segmentado, priorizando industrias específicas donde la credibilidad es mayor, como Viajes/Hospitalidad y Automotriz (Domestic), y adaptando las estrategias según las barreras y drivers específicos de cada segmento e industria.
-            </p>
           </CardContent>
         </Card>
       </div>
