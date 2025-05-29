@@ -163,3 +163,15 @@ export default function Historia() {
                     <td className="p-2">Excelente</td>
                     <td className="p-2">5-8 años</td>
                   </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="mt-4 text-sm">
+              <p>Los clientes Nearshore muestran relaciones más largas (8+ años) con satisfacción mixta, mientras que clientes Domestic tienen relaciones más recientes (5-8 años) pero con alta satisfacción en industrias clave como Viajes/Hospitalidad y Automotriz.</p>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </Layout>
+  );
+}
