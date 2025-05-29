@@ -4,23 +4,20 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BarChart } from '@/components/BarChart';
 import { StatCard } from '@/components/StatCard';
 
-// Datos de factores que potencian el crecimiento
 const growthFactorsData = [
-  { name: 'Integración tecnologías', Nearshore: 56, Domestic: 75 },
-  { name: 'Fortalecer rol estratégico', Nearshore: 44, Domestic: 75 },
-  { name: 'Soluciones personalizadas', Nearshore: 33, Domestic: 50 },
-  { name: 'Mejorar capacitación', Nearshore: 22, Domestic: 50 },
-  { name: 'Sin respuesta', Nearshore: 22, Domestic: 0 },
+  { name: 'Integración tecnologías', Nearshore: 56, Domestic: 80 },
+  { name: 'Fortalecer rol estratégico', Nearshore: 44, Domestic: 80 },
+  { name: 'Soluciones personalizadas', Nearshore: 33, Domestic: 40 },
+  { name: 'Mejorar capacitación', Nearshore: 22, Domestic: 40 },
 ];
 
-// Datos de factores de fin de relación
 const relationshipEndFactorsData = [
   { name: 'Incremento en costos', Nearshore: 78, Domestic: 100 },
-  { name: 'Deterioro en calidad', Nearshore: 67, Domestic: 75 },
+  { name: 'Deterioro en calidad', Nearshore: 67, Domestic: 60 },
   { name: 'Cambios en necesidades', Nearshore: 44, Domestic: 0 },
   { name: 'Problemas sin solución', Nearshore: 33, Domestic: 0 },
-  { name: 'Rotación de personal', Nearshore: 11, Domestic: 50 },
-  { name: 'Mejor oferta competencia', Nearshore: 11, Domestic: 50 },
+  { name: 'Rotación de personal', Nearshore: 11, Domestic: 40 },
+  { name: 'Mejor oferta competencia', Nearshore: 11, Domestic: 40 },
 ];
 
 export default function Factores() {
@@ -29,27 +26,44 @@ export default function Factores() {
       <div className="grid gap-6 animate-fade-in">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <StatCard 
-            title="Integración Tecnológica" 
-            value="62%" 
-            description="Factor clave para crecimiento" 
+            title="Factor Crecimiento Principal" 
+            value="64%" 
+            description="Integración tecnologías - Área de mejora más mencionada" 
             trend="up"
-            trendValue="75% Domestic"
+            trendValue="80% Domestic"
           />
           <StatCard 
-            title="Incremento en Costos" 
-            value="85%" 
-            description="Principal factor de riesgo" 
+            title="Factor Riesgo Principal" 
+            value="86%" 
+            description="Incremento costos - Principal amenaza para continuidad" 
             trend="up"
             trendValue="100% Domestic"
           />
           <StatCard 
-            title="Deterioro en Calidad" 
-            value="69%" 
-            description="Segundo factor de riesgo" 
-            trend="up"
-            trendValue="75% Domestic"
+            title="Segundo Factor Riesgo" 
+            value="64%" 
+            description="Deterioro calidad - Segunda amenaza más mencionada" 
+            trend="neutral"
+            trendValue="60% Domestic"
           />
         </div>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Barrera Crítica Cualitativa</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="p-4 border-l-4 border-red-500 bg-red-50">
+              <h4 className="font-semibold text-red-800 mb-2">Falta de Proactividad Comercial</h4>
+              <div className="text-sm text-red-700 space-y-2">
+                <p><strong>Caso NRG Energy:</strong> "Pulling teeth" para obtener propuestas innovadoras</p>
+                <p><strong>Descripción:</strong> Clientes deben solicitar explícitamente propuestas de nuevos servicios en lugar de recibirlas proactivamente</p>
+                <p><strong>Impacto:</strong> Barrera crítica que debe abordarse inmediatamente para facilitar reposicionamiento</p>
+                <p><strong>Acción requerida:</strong> Implementar programa "Innovation Outreach" proactivo</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
         
         <Card>
           <CardHeader>
@@ -63,12 +77,12 @@ export default function Factores() {
               height={300}
             />
             <div className="mt-4 text-sm">
-              <p className="mb-2">Análisis de factores de crecimiento:</p>
+              <p className="mb-2">Análisis de factores de crecimiento actualizados:</p>
               <ul className="list-disc pl-6 space-y-1">
-                <li>Las áreas de mejora identificadas están perfectamente alineadas con el reposicionamiento deseado: tecnología avanzada, rol estratégico y soluciones personalizadas.</li>
-                <li>Los clientes Domestic muestran mayor énfasis en todas estas áreas, sugiriendo mayor receptividad al reposicionamiento en este segmento.</li>
-                <li>"Mejorar integración de tecnologías de punta" es el factor más importante para ambos segmentos (56% Nearshore, 75% Domestic).</li>
-                <li>"Fortalecer rol como socio estratégico" muestra una diferencia significativa entre segmentos (44% Nearshore vs 75% Domestic), sugiriendo que los clientes Domestic están más abiertos a una relación estratégica.</li>
+                <li><strong>Integración tecnológica dominante:</strong> 64% promedio, con énfasis crítico en Domestic (80% vs 56%).</li>
+                <li><strong>Rol estratégico igual prioridad:</strong> 80% Domestic vs 44% Nearshore, confirmando mayor receptividad para reposicionamiento consultivo.</li>
+                <li><strong>Soluciones personalizadas estables:</strong> ~35% ambos segmentos, sugiriendo demanda consistente por customización.</li>
+                <li><strong>Capacitación como habilitador:</strong> Mayor énfasis en Domestic (40% vs 22%), alineado con demanda de servicios avanzados.</li>
               </ul>
             </div>
           </CardContent>
@@ -88,10 +102,10 @@ export default function Factores() {
             <div className="mt-4 text-sm">
               <p className="mb-2">Análisis de factores de riesgo:</p>
               <ul className="list-disc pl-6 space-y-1">
-                <li>El "Incremento significativo en costos" representa el principal factor de riesgo para la continuidad de las relaciones (78% Nearshore, 100% Domestic), sugiriendo que el reposicionamiento debe enfatizar claramente el valor añadido para justificar cualquier diferencial de precio.</li>
-                <li>La importancia del "Deterioro en calidad del servicio" (67% Nearshore, 75% Domestic) refuerza la necesidad de mantener altos estándares de calidad durante el proceso de reposicionamiento.</li>
-                <li>Los clientes Nearshore dan más importancia a "Cambios en necesidades de negocio" (44% vs 0%) y "Problemas recurrentes sin solución" (33% vs 0%).</li>
-                <li>Los clientes Domestic son más sensibles a la "Rotación de personal" (50% vs 11%) y a "Mejores ofertas competitivas" (50% vs 11%), sugiriendo un entorno más competitivo en este segmento.</li>
+                <li><strong>Incremento costos crítico:</strong> 86% promedio (78% Nearshore, 100% Domestic) - reposicionamiento debe enfatizar ROI claramente.</li>
+                <li><strong>Calidad como base:</strong> 64% considera deterioro como riesgo, reforzando necesidad de mantener estándares durante transición.</li>
+                <li><strong>Diferentes vulnerabilidades:</strong> Nearshore más sensible a cambios de negocio, Domestic a competencia y rotación personal.</li>
+                <li><strong>Oportunidad en problemas:</strong> Nearshore 33% ve "Problemas sin solución" como riesgo vs 0% Domestic, sugiriendo enfoque proactivo diferenciado.</li>
               </ul>
             </div>
           </CardContent>
@@ -115,141 +129,80 @@ export default function Factores() {
                 </thead>
                 <tbody>
                   <tr className="border-b">
-                    <td className="p-2">Technology</td>
+                    <td className="p-2">Retail/E-commerce</td>
                     <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-purple text-white">Nearshore</span></td>
-                    <td className="p-2">Integración tecnologías</td>
-                    <td className="p-2">Incremento en costos</td>
+                    <td className="p-2">Integración tecnológica</td>
+                    <td className="p-2">Incremento costos</td>
                     <td className="p-2">Alta</td>
                   </tr>
                   <tr className="border-b">
-                    <td className="p-2">Retail/E-commerce</td>
+                    <td className="p-2">Technology</td>
                     <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-purple text-white">Nearshore</span></td>
                     <td className="p-2">Fortalecer rol estratégico</td>
-                    <td className="p-2">Incremento en costos</td>
-                    <td className="p-2">Alta</td>
+                    <td className="p-2">Deterioro calidad</td>
+                    <td className="p-2">Media</td>
                   </tr>
                   <tr className="border-b">
                     <td className="p-2">Media/Entertainment</td>
                     <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-purple text-white">Nearshore</span></td>
-                    <td className="p-2">Integración tecnologías</td>
-                    <td className="p-2">Deterioro en calidad</td>
-                    <td className="p-2">Media</td>
+                    <td className="p-2">Integración tecnológica</td>
+                    <td className="p-2">Incremento costos</td>
+                    <td className="p-2">Alta</td>
                   </tr>
                   <tr className="border-b">
                     <td className="p-2">Energy/Utilities</td>
                     <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-purple text-white">Nearshore</span></td>
-                    <td className="p-2">Soluciones personalizadas</td>
-                    <td className="p-2">Incremento en costos</td>
-                    <td className="p-2">Alta</td>
+                    <td className="p-2">Integración tecnológica</td>
+                    <td className="p-2">Cambios necesidades</td>
+                    <td className="p-2">Media</td>
                   </tr>
                   <tr className="border-b">
                     <td className="p-2">Financial Services</td>
                     <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-purple text-white">Nearshore</span></td>
-                    <td className="p-2">Fortalecer rol estratégico</td>
-                    <td className="p-2">Cambios en necesidades</td>
-                    <td className="p-2">Media</td>
+                    <td className="p-2">Soluciones personalizadas</td>
+                    <td className="p-2">Deterioro calidad</td>
+                    <td className="p-2">Alta</td>
                   </tr>
                   <tr className="border-b">
                     <td className="p-2">Healthcare</td>
                     <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-purple text-white">Nearshore</span></td>
-                    <td className="p-2">Integración tecnologías</td>
-                    <td className="p-2">Deterioro en calidad</td>
+                    <td className="p-2">Mejorar capacitación</td>
+                    <td className="p-2">Incremento costos</td>
                     <td className="p-2">Media</td>
                   </tr>
                   <tr className="border-b">
                     <td className="p-2">Electrodomésticos</td>
                     <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-magenta text-white">Domestic</span></td>
-                    <td className="p-2">Integración tecnologías</td>
-                    <td className="p-2">Incremento en costos</td>
+                    <td className="p-2">Fortalecer rol estratégico</td>
+                    <td className="p-2">Incremento costos</td>
                     <td className="p-2">Alta</td>
                   </tr>
                   <tr className="border-b">
                     <td className="p-2">FMCG</td>
                     <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-magenta text-white">Domestic</span></td>
-                    <td className="p-2">Fortalecer rol estratégico</td>
-                    <td className="p-2">Rotación de personal</td>
+                    <td className="p-2">Integración tecnológica</td>
+                    <td className="p-2">Incremento costos</td>
                     <td className="p-2">Media</td>
                   </tr>
                   <tr className="border-b">
                     <td className="p-2">Viajes/Hospitalidad</td>
                     <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-magenta text-white">Domestic</span></td>
-                    <td className="p-2">Integración tecnologías</td>
-                    <td className="p-2">Incremento en costos</td>
+                    <td className="p-2">Soluciones personalizadas</td>
+                    <td className="p-2">Mejor oferta</td>
                     <td className="p-2">Alta</td>
                   </tr>
                   <tr className="border-b">
                     <td className="p-2">Automotriz</td>
                     <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-magenta text-white">Domestic</span></td>
-                    <td className="p-2">Fortalecer rol estratégico</td>
-                    <td className="p-2">Mejor oferta competencia</td>
+                    <td className="p-2">Integración tecnológica</td>
+                    <td className="p-2">Rotación personal</td>
                     <td className="p-2">Media-Alta</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <div className="mt-4 text-sm">
-              <p>Las industrias más sensibles al "Incremento en costos" son Technology, Retail/E-commerce, Energy/Utilities, Electrodomésticos y Viajes/Hospitalidad. Para estas industrias, el reposicionamiento debe enfatizar el valor añadido para justificar cualquier incremento de precios.</p>
-            </div>
-          </CardContent>
-        </Card>
-        
-        <Card>
-          <CardHeader>
-            <CardTitle>Correlación entre Factores de Crecimiento y Riesgo</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse">
-                <thead>
-                  <tr className="border-b">
-                    <th className="text-left p-2">Factor Crecimiento</th>
-                    <th className="text-left p-2">% Total</th>
-                    <th className="text-left p-2">Factor Riesgo Asociado</th>
-                    <th className="text-left p-2">% Total</th>
-                    <th className="text-left p-2">Implicación</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b">
-                    <td className="p-2">Integración tecnologías</td>
-                    <td className="p-2">62%</td>
-                    <td className="p-2">Incremento en costos</td>
-                    <td className="p-2">85%</td>
-                    <td className="p-2">Demostrar ROI de tecnologías</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="p-2">Fortalecer rol estratégico</td>
-                    <td className="p-2">54%</td>
-                    <td className="p-2">Deterioro en calidad</td>
-                    <td className="p-2">69%</td>
-                    <td className="p-2">Mantener calidad en transición</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="p-2">Soluciones personalizadas</td>
-                    <td className="p-2">38%</td>
-                    <td className="p-2">Cambios en necesidades</td>
-                    <td className="p-2">31%</td>
-                    <td className="p-2">Flexibilidad y adaptabilidad</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="p-2">Mejorar capacitación</td>
-                    <td className="p-2">31%</td>
-                    <td className="p-2">Rotación de personal</td>
-                    <td className="p-2">23%</td>
-                    <td className="p-2">Retención y desarrollo talento</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div className="mt-4 text-sm">
-              <p className="mb-2">Análisis de correlaciones:</p>
-              <ul className="list-disc pl-6 space-y-1">
-                <li>Existe una correlación entre los factores que potencian el crecimiento y los que representan riesgo, sugiriendo áreas clave para un reposicionamiento exitoso.</li>
-                <li>La integración de tecnologías avanzadas debe ir acompañada de una clara demostración de valor (ROI) para mitigar la preocupación por el incremento en costos.</li>
-                <li>El fortalecimiento del rol estratégico debe mantener los altos estándares de calidad actuales para evitar deterioro durante la transición.</li>
-                <li>Las soluciones personalizadas deben ser suficientemente flexibles para adaptarse a cambios en las necesidades del negocio.</li>
-                <li>La mejora en capacitación debe ir acompañada de estrategias de retención de talento para minimizar el impacto de la rotación de personal.</li>
-              </ul>
+              <p><strong>Insight crítico:</strong> Energy/Utilities (caso NRG) identifica "Cambios en necesidades" como riesgo principal, validando la necesidad de proactividad comercial para anticipar evolución sectorial.</p>
             </div>
           </CardContent>
         </Card>
@@ -259,33 +212,38 @@ export default function Factores() {
             <CardTitle>Implicaciones para el Reposicionamiento</CardTitle>
           </CardHeader>
           <CardContent className="text-sm space-y-4">
-            <p>Las diferencias entre segmentos sugieren un enfoque diferencial para mitigar riesgos:</p>
+            <p>El análisis actualizado revela patrones críticos para el reposicionamiento exitoso:</p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="p-4 border rounded-lg bg-teleperformance-purple/10">
-                <h4 className="font-semibold text-teleperformance-purple mb-2">Nearshore</h4>
+                <h4 className="font-semibold text-teleperformance-purple mb-2">Enfoque Nearshore</h4>
                 <ul className="list-disc pl-6 space-y-1">
-                  <li>Anticiparse a cambios en necesidades del negocio</li>
-                  <li>Mejorar procesos de resolución de problemas</li>
-                  <li>Enfatizar estabilidad y cumplimiento de compromisos</li>
-                  <li>Desarrollar soluciones personalizadas adaptables</li>
+                  <li><strong>Proactividad inmediata:</strong> Implementar "Innovation Outreach" para casos como NRG Energy</li>
+                  <li><strong>Anticipar cambios:</strong> Monitoreo proactivo de evolución sectorial</li>
+                  <li><strong>Enfatizar estabilidad:</strong> Comunicar continuidad en calidad durante transición</li>
+                  <li><strong>ROI tecnológico:</strong> Demostrar valor cuantificable de integraciones</li>
                 </ul>
               </div>
               
               <div className="p-4 border rounded-lg bg-teleperformance-magenta/10">
-                <h4 className="font-semibold text-teleperformance-magenta mb-2">Domestic</h4>
+                <h4 className="font-semibold text-teleperformance-magenta mb-2">Enfoque Domestic</h4>
                 <ul className="list-disc pl-6 space-y-1">
-                  <li>Enfoque en estabilidad de personal y retención</li>
-                  <li>Desarrollar ventajas competitivas claras y diferenciales</li>
-                  <li>Demostrar ROI de soluciones tecnológicas</li>
-                  <li>Transparencia en estructura de costos y valor añadido</li>
+                  <li><strong>Retención de talento:</strong> Estrategias específicas para minimizar rotación</li>
+                  <li><strong>Ventajas competitivas:</strong> Desarrollar diferenciales únicos y sostenibles</li>
+                  <li><strong>Rol estratégico acelerado:</strong> Capitalizar alta receptividad (80%)</li>
+                  <li><strong>Justificación de costos:</strong> Énfasis en ROI dada sensibilidad total (100%)</li>
                 </ul>
               </div>
             </div>
             
-            <p className="mt-4">
-              La estrategia de reposicionamiento debe equilibrar la introducción de nuevas capacidades con la mitigación de los riesgos percibidos. En particular, debe enfatizar el valor añadido de las nuevas capacidades para justificar cualquier potencial incremento en costos, especialmente en industrias de alta sensibilidad al precio como Technology, Retail/E-commerce y Viajes/Hospitalidad.
-            </p>
+            <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg">
+              <h4 className="font-semibold text-amber-800 mb-2">Acción Inmediata Requerida</h4>
+              <p className="text-amber-700">
+                <strong>Programa "Innovation Outreach":</strong> Implementación urgente de iniciativa proactiva para presentar 
+                propuestas innovadoras sin esperar solicitudes explícitas, comenzando con casos identificados como NRG Energy 
+                y expandiendo sistemáticamente a toda la base de clientes.
+              </p>
+            </div>
           </CardContent>
         </Card>
       </div>
