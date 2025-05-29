@@ -5,29 +5,26 @@ import { BarChart } from '@/components/BarChart';
 import { StatCard } from '@/components/StatCard';
 
 const categoryPerceptionData = [
-  { name: 'BPO', Nearshore: 33, Domestic: 25 },
-  { name: 'Experiencia omnicanal', Nearshore: 22, Domestic: 25 },
+  { name: 'BPO', Nearshore: 33, Domestic: 20 },
+  { name: 'Experiencia omnicanal', Nearshore: 22, Domestic: 20 },
   { name: 'Agentes especializados', Nearshore: 22, Domestic: 0 },
-  { name: 'Soluciones tecnológicas', Nearshore: 0, Domestic: 50 },
+  { name: 'Soluciones tecnológicas', Nearshore: 0, Domestic: 40 },
   { name: 'Consultor estratégico', Nearshore: 11, Domestic: 0 },
-  { name: 'Otros/No respuesta', Nearshore: 11, Domestic: 0 },
+  { name: 'Sin respuesta', Nearshore: 12, Domestic: 20 },
 ];
 
 const perceivedValuesData = [
-  { name: 'Calidad servicio', Nearshore: 44, Domestic: 75 },
-  { name: 'Flexibilidad/escalabilidad', Nearshore: 44, Domestic: 75 },
-  { name: 'Alcance global', Nearshore: 56, Domestic: 25 },
-  { name: 'Eficiencia operativa', Nearshore: 22, Domestic: 50 },
-  { name: 'Conocimiento especializado', Nearshore: 11, Domestic: 50 },
+  { name: 'Calidad servicio', Nearshore: 44, Domestic: 60 },
+  { name: 'Flexibilidad/escalabilidad', Nearshore: 44, Domestic: 60 },
+  { name: 'Alcance global', Nearshore: 56, Domestic: 20 },
+  { name: 'Eficiencia operativa', Nearshore: 22, Domestic: 40 },
+  { name: 'Conocimiento especializado', Nearshore: 11, Domestic: 40 },
   { name: 'Ética empresarial', Nearshore: 33, Domestic: 0 },
 ];
 
 const expectationsFulfillmentData = [
-  { name: '5/5', Nearshore: 67, Domestic: 50 },
-  { name: '4/5', Nearshore: 33, Domestic: 50 },
-  { name: '3/5', Nearshore: 0, Domestic: 0 },
-  { name: '2/5', Nearshore: 0, Domestic: 0 },
-  { name: '1/5', Nearshore: 0, Domestic: 0 },
+  { name: '5/5', Nearshore: 67, Domestic: 40 },
+  { name: '4/5', Nearshore: 33, Domestic: 60 },
 ];
 
 const communicationChannelsData = [
@@ -39,36 +36,20 @@ const communicationChannelsData = [
   { name: 'Reportes escritos', Nearshore: 57, Domestic: 67 },
 ];
 
-const communicationFrequencyData = [
-  { name: 'Diariamente', Nearshore: 22, Domestic: 0 },
-  { name: 'Varias veces/semana', Nearshore: 11, Domestic: 25 },
-  { name: 'Semanalmente', Nearshore: 44, Domestic: 50 },
-  { name: 'Mensualmente', Nearshore: 11, Domestic: 25 },
-  { name: 'Menos frecuente', Nearshore: 0, Domestic: 0 },
-  { name: 'Sin respuesta', Nearshore: 11, Domestic: 0 },
-];
-
-const messagesClarityData = [
-  { name: 'Extremadamente claros', Nearshore: 0, Domestic: 33 },
-  { name: 'Muy claros', Nearshore: 67, Domestic: 33 },
-  { name: 'Moderadamente claros', Nearshore: 22, Domestic: 0 },
-  { name: 'Sin respuesta', Nearshore: 11, Domestic: 33 },
-];
-
 export default function Percepcion() {
   return (
     <Layout title="Percepción de Valor y Comunicación">
       <div className="grid gap-6 animate-fade-in">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <StatCard 
-            title="Cumplimiento de Expectativas" 
-            value="67%" 
-            description="Clientes Nearshore califican 5/5" 
+            title="Cumplimiento Expectativas" 
+            value="4.6/5" 
+            description="Calificación promedio de cumplimiento" 
           />
           <StatCard 
-            title="Percepción como Tecnológicos" 
-            value="50%" 
-            description="Clientes Domestic ven a TP como proveedor tecnológico" 
+            title="Percepción Tecnológica" 
+            value="40%" 
+            description="Clientes Domestic que perciben a TP como tecnológico" 
           />
         </div>
         
@@ -80,16 +61,16 @@ export default function Percepcion() {
             <BarChart 
               data={categoryPerceptionData} 
               keys={['Nearshore', 'Domestic']} 
-              subtitle="Cómo categorizan los clientes a Teleperformance" 
+              subtitle="Cómo categorizan los clientes a Teleperformance actualmente" 
               height={300}
             />
             <div className="mt-4 text-sm">
-              <p className="mb-2">Existe una diferencia notable en la percepción entre segmentos:</p>
+              <p className="mb-2">Análisis de percepción de categoría actualizada:</p>
               <ul className="list-disc pl-6 space-y-1">
-                <li>50% de clientes Domestic ven a TP como "Proveedor de soluciones tecnológicas avanzadas", categoría que ningún cliente Nearshore seleccionó como principal.</li>
-                <li>Los clientes Nearshore perciben a TP principalmente como proveedor BPO (33%), mientras solo 25% de Domestic tiene esta percepción.</li>
-                <li>La percepción como "Proveedor de experiencia omnicanal" es similar en ambos segmentos (22% vs 25%).</li>
-                <li>La percepción como "Consultor estratégico" solo aparece en clientes Nearshore (11%) y en un porcentaje bajo.</li>
+                <li><strong>Diferencia crítica entre segmentos:</strong> 40% de clientes Domestic perciben a TP como "Proveedor de soluciones tecnológicas" vs 0% en Nearshore.</li>
+                <li><strong>Persistencia percepción BPO:</strong> Sigue siendo categoría principal en Nearshore (33%) y significativa en Domestic (20%).</li>
+                <li><strong>Oportunidad en Nearshore:</strong> 11% ya percibe como "Consultor estratégico", única mención de esta categoría.</li>
+                <li><strong>Incertidumbre categoria:</strong> 12-20% sin respuesta clara sugiere espacio para reposicionamiento activo.</li>
               </ul>
             </div>
           </CardContent>
@@ -107,12 +88,12 @@ export default function Percepcion() {
               height={300}
             />
             <div className="mt-4 text-sm">
-              <p className="mb-2">Ambos segmentos valoran aspectos diferentes:</p>
+              <p className="mb-2">Análisis de valores percibidos:</p>
               <ul className="list-disc pl-6 space-y-1">
-                <li>Los clientes Domestic valoran significativamente más el "Conocimiento especializado" (50% vs 11%) y la "Eficiencia operativa" (50% vs 22%).</li>
-                <li>Los clientes Nearshore dan mayor importancia al "Alcance global" (56% vs 25%) y la "Ética empresarial" (33% vs 0%).</li>
-                <li>La "Calidad en servicio" y "Flexibilidad/escalabilidad" son importantes para ambos segmentos pero con mayor énfasis en Domestic.</li>
-                <li>El "Conocimiento especializado", componente clave para el posicionamiento como socio estratégico, es valorado por el 50% de clientes Domestic pero solo por el 11% de Nearshore.</li>
+                <li><strong>Conocimiento especializado:</strong> Domestic valora significativamente más (40% vs 11%), alineado con percepción tecnológica.</li>
+                <li><strong>Alcance global:</strong> Diferenciador clave para Nearshore (56% vs 20%), consistente con naturaleza internacional.</li>
+                <li><strong>Calidad y flexibilidad:</strong> Valorados por ambos segmentos pero con mayor énfasis en Domestic (60% vs 44%).</li>
+                <li><strong>Ética empresarial:</strong> Valorada únicamente por Nearshore (33% vs 0%), sugiriendo diferencias culturales.</li>
               </ul>
             </div>
           </CardContent>
@@ -128,14 +109,16 @@ export default function Percepcion() {
               keys={['Nearshore', 'Domestic']} 
               subtitle="Valoración del cumplimiento de expectativas (escala 1-5)" 
               height={300}
+              isPercentage={false}
+              valueScale={[0, 100]}
             />
             <div className="mt-4 text-sm">
-              <p className="mb-2">El nivel de cumplimiento de expectativas es excepcionalmente alto:</p>
+              <p className="mb-2">Análisis de cumplimiento de expectativas:</p>
               <ul className="list-disc pl-6 space-y-1">
-                <li>Calificación promedio de 4.6/5 para todo el conjunto de clientes.</li>
-                <li>El 62% de los clientes otorga la calificación máxima de 5/5, mientras el 38% restante califica con 4/5.</li>
-                <li>Los clientes Nearshore muestran ligeramente mayor proporción de calificación máxima (67% vs 50% con 5/5).</li>
-                <li>Ningún cliente califica por debajo de 4/5, lo que representa una base sólida para el reposicionamiento.</li>
+                <li><strong>Calificación excepcional:</strong> Promedio de 4.6/5 con 100% de clientes calificando 4/5 o superior.</li>
+                <li><strong>Nearshore más entusiasta:</strong> 67% otorga calificación máxima vs 40% en Domestic.</li>
+                <li><strong>Domestic más moderado:</strong> 60% califica 4/5, sugiriendo satisfacción sólida pero con espacio de mejora.</li>
+                <li><strong>Base sólida para reposicionamiento:</strong> Alta satisfacción actual facilita evolución hacia nuevos servicios.</li>
               </ul>
             </div>
           </CardContent>
@@ -155,50 +138,14 @@ export default function Percepcion() {
             <div className="mt-4 text-sm">
               <p className="mb-2">Análisis de efectividad de canales:</p>
               <ul className="list-disc pl-6 space-y-1">
-                <li>Los canales digitales (email, videoconferencias, mensajería) son considerados los más efectivos por ambos segmentos.</li>
-                <li>Los clientes Domestic consideran "Extremadamente efectivos" los canales digitales, calificando todos con 100% de efectividad.</li>
-                <li>Las "Reuniones presenciales" reciben la calificación más baja en Nearshore (50%), sugiriendo preferencia por comunicación digital.</li>
-                <li>Los "Reportes escritos" son considerados más efectivos por Domestic (67% vs 57%), aunque siguen siendo el segundo canal menos efectivo.</li>
+                <li><strong>Preferencia digital absoluta en Domestic:</strong> 100% efectividad en canales digitales (email, video, mensajería, llamadas).</li>
+                <li><strong>Brecha en reuniones presenciales:</strong> Domestic 75% vs Nearshore 50%, sugiriendo mayor valoración del contacto directo.</li>
+                <li><strong>Oportunidad reportes:</strong> Menor efectividad percibida (57-67%) representa área de mejora en comunicación formal.</li>
+                <li><strong>Implicación para reposicionamiento:</strong> Canales digitales son óptimos para comunicar nuevas capacidades.</li>
               </ul>
             </div>
           </CardContent>
         </Card>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Frecuencia Preferida de Comunicación</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <BarChart 
-                data={communicationFrequencyData} 
-                keys={['Nearshore', 'Domestic']} 
-                subtitle="Preferencia de frecuencia de comunicación" 
-                height={300}
-              />
-              <div className="mt-4 text-sm">
-                <p>La frecuencia semanal es la preferida por la mayoría de clientes (44% Nearshore, 50% Domestic), proporcionando una pauta para la cadencia de comunicaciones sobre el nuevo posicionamiento.</p>
-              </div>
-            </CardContent>
-          </Card>
-          
-          <Card>
-            <CardHeader>
-              <CardTitle>Claridad y Efectividad de Mensajes</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <BarChart 
-                data={messagesClarityData} 
-                keys={['Nearshore', 'Domestic']} 
-                subtitle="Percepción de claridad en comunicaciones" 
-                height={300}
-              />
-              <div className="mt-4 text-sm">
-                <p>Los clientes Domestic son más polarizados: 33% considera los mensajes "Extremadamente claros", pero otro 33% prefirió no contestar esta pregunta. Los clientes Nearshore son más consistentes, con 67% considerando los mensajes "Muy claros".</p>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
       </div>
     </Layout>
   );
