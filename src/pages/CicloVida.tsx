@@ -4,57 +4,40 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BarChart } from '@/components/BarChart';
 import { StatCard } from '@/components/StatCard';
 
-// Datos de proyección a 1 año
 const projectionOneYearData = [
-  { name: 'Probable crecimiento', Nearshore: 33, Domestic: 50 },
-  { name: 'Se mantendrá igual', Nearshore: 44, Domestic: 25 },
-  { name: 'Probable disminución', Nearshore: 0, Domestic: 25 },
-  { name: 'Sin respuesta', Nearshore: 22, Domestic: 0 },
+  { name: 'Probable crecimiento', Nearshore: 33, Domestic: 40 },
+  { name: 'Se mantendrá igual', Nearshore: 44, Domestic: 20 },
+  { name: 'Probable disminución', Nearshore: 0, Domestic: 20 },
+  { name: 'Sin respuesta', Nearshore: 23, Domestic: 20 },
 ];
 
-// Datos de proyección a 2-3 años
 const projectionThreeYearsData = [
-  { name: 'Probable crecimiento', Nearshore: 33, Domestic: 50 },
-  { name: 'Se mantendrá igual', Nearshore: 33, Domestic: 50 },
+  { name: 'Probable crecimiento', Nearshore: 33, Domestic: 40 },
+  { name: 'Se mantendrá igual', Nearshore: 33, Domestic: 40 },
   { name: 'Probable disminución', Nearshore: 0, Domestic: 0 },
-  { name: 'Sin respuesta', Nearshore: 33, Domestic: 0 },
+  { name: 'Sin respuesta', Nearshore: 34, Domestic: 20 },
 ];
 
-// Datos de proyección a 4-5 años
 const projectionFiveYearsData = [
-  { name: 'Probable crecimiento', Nearshore: 22, Domestic: 25 },
-  { name: 'Se mantendrá igual', Nearshore: 22, Domestic: 0 },
+  { name: 'Probable crecimiento', Nearshore: 22, Domestic: 20 },
+  { name: 'Se mantendrá igual', Nearshore: 22, Domestic: 40 },
   { name: 'Probable disminución', Nearshore: 0, Domestic: 0 },
-  { name: 'Sin respuesta', Nearshore: 56, Domestic: 75 },
+  { name: 'Sin respuesta', Nearshore: 56, Domestic: 40 },
 ];
 
-// Datos de áreas de oportunidad
 const opportunityAreasData = [
-  { name: 'Nuevas tecnologías', Nearshore: 56, Domestic: 75 },
-  { name: 'Expandir servicios actuales', Nearshore: 44, Domestic: 50 },
-  { name: 'Añadir nuevos servicios', Nearshore: 44, Domestic: 50 },
-  { name: 'Expandir a otras regiones', Nearshore: 33, Domestic: 50 },
-  { name: 'Sin respuesta', Nearshore: 11, Domestic: 0 },
+  { name: 'Nuevas tecnologías', Nearshore: 56, Domestic: 80 },
+  { name: 'Expandir servicios actuales', Nearshore: 44, Domestic: 40 },
+  { name: 'Añadir nuevos servicios', Nearshore: 44, Domestic: 40 },
+  { name: 'Expandir a otras regiones', Nearshore: 33, Domestic: 40 },
 ];
 
-// Datos de servicios adicionales
 const additionalServicesData = [
-  { name: 'Soluciones de IA', Nearshore: 33, Domestic: 75 },
+  { name: 'Soluciones de IA', Nearshore: 33, Domestic: 60 },
   { name: 'Consultoría estratégica', Nearshore: 22, Domestic: 0 },
-  { name: 'Análisis avanzado de datos', Nearshore: 11, Domestic: 50 },
-  { name: 'Automatización (RPA)', Nearshore: 11, Domestic: 50 },
-  { name: 'Ventas', Nearshore: 0, Domestic: 50 },
-  { name: 'Sin interés', Nearshore: 22, Domestic: 0 },
-  { name: 'Sin respuesta', Nearshore: 11, Domestic: 0 },
-];
-
-// Datos de áreas de mejora para alineación
-const improvementAreasData = [
-  { name: 'Integración tecnologías', Nearshore: 56, Domestic: 75 },
-  { name: 'Fortalecer rol estratégico', Nearshore: 44, Domestic: 75 },
-  { name: 'Soluciones personalizadas', Nearshore: 33, Domestic: 50 },
-  { name: 'Mejorar capacitación', Nearshore: 22, Domestic: 50 },
-  { name: 'Sin respuesta', Nearshore: 22, Domestic: 0 },
+  { name: 'Análisis avanzado de datos', Nearshore: 11, Domestic: 40 },
+  { name: 'Automatización (RPA)', Nearshore: 11, Domestic: 40 },
+  { name: 'Ventas', Nearshore: 0, Domestic: 40 },
 ];
 
 export default function CicloVida() {
@@ -65,23 +48,23 @@ export default function CicloVida() {
           <StatCard 
             title="Proyección Crecimiento" 
             value="38%" 
-            description="Anticipa crecimiento próximo año" 
+            description="Clientes que anticipan probable crecimiento" 
             trend="up"
-            trendValue="50% Domestic"
+            trendValue="40% Domestic"
           />
           <StatCard 
             title="Nuevas Tecnologías" 
-            value="62%" 
-            description="Ve oportunidad en implementación tecnológica" 
+            value="64%" 
+            description="Principal oportunidad de expansión identificada" 
             trend="up"
-            trendValue="75% Domestic"
+            trendValue="80% Domestic"
           />
           <StatCard 
             title="Soluciones IA" 
-            value="46%" 
-            description="Interés en servicios adicionales de IA" 
+            value="43%" 
+            description="Servicio adicional con mayor demanda" 
             trend="up"
-            trendValue="75% Domestic"
+            trendValue="60% Domestic"
           />
         </div>
         
@@ -97,12 +80,12 @@ export default function CicloVida() {
               height={300}
             />
             <div className="mt-4 text-sm">
-              <p className="mb-2">Los clientes Domestic muestran mayor dinamismo en sus proyecciones:</p>
+              <p className="mb-2">Análisis de proyecciones a corto plazo:</p>
               <ul className="list-disc pl-6 space-y-1">
-                <li>Mayor optimismo para crecimiento a corto plazo (50% vs 33% en Nearshore).</li>
-                <li>Incluyen el único caso de "Probable disminución" (25% vs 0% en Nearshore).</li>
-                <li>Todos los clientes Domestic tienen una proyección definida (0% sin respuesta vs 22% en Nearshore).</li>
-                <li>La mayoría de clientes Nearshore (44%) proyecta estabilidad para el próximo año.</li>
+                <li><strong>Optimismo moderado:</strong> 38% total anticipa crecimiento, con ligera ventaja en Domestic (40% vs 33%).</li>
+                <li><strong>Estabilidad preferida en Nearshore:</strong> 44% proyecta mantenerse igual vs 20% en Domestic.</li>
+                <li><strong>Riesgo en Domestic:</strong> Único segmento con proyección de disminución (20%), requiere atención inmediata.</li>
+                <li><strong>Incertidumbre similar:</strong> ~20% sin respuesta en ambos segmentos sugiere cautela general del mercado.</li>
               </ul>
             </div>
           </CardContent>
@@ -120,12 +103,12 @@ export default function CicloVida() {
               height={300}
             />
             <div className="mt-4 text-sm">
-              <p className="mb-2">Para el mediano plazo (2-3 años):</p>
+              <p className="mb-2">Análisis de proyecciones a mediano plazo:</p>
               <ul className="list-disc pl-6 space-y-1">
-                <li>Los clientes Domestic mantienen mayor optimismo sobre el crecimiento (50% vs 33% en Nearshore).</li>
-                <li>Ningún cliente proyecta disminución en este horizonte de tiempo.</li>
-                <li>La incertidumbre aumenta en clientes Nearshore (33% sin respuesta vs 0% en Domestic).</li>
-                <li>La estabilidad es valorada positivamente por ambos segmentos (33% Nearshore, 50% Domestic).</li>
+                <li><strong>Estabilización de expectativas:</strong> Desaparece proyección de disminución en Domestic.</li>
+                <li><strong>Equilibrio en Domestic:</strong> 40% crecimiento vs 40% estabilidad, sugiriendo claridad en estrategia.</li>
+                <li><strong>Mayor incertidumbre Nearshore:</strong> Aumenta "Sin respuesta" a 34%, indicando volatilidad percibida.</li>
+                <li><strong>Consistencia en crecimiento:</strong> Ambos segmentos mantienen perspectiva optimista (~35-40%).</li>
               </ul>
             </div>
           </CardContent>
@@ -143,12 +126,12 @@ export default function CicloVida() {
               height={300}
             />
             <div className="mt-4 text-sm">
-              <p className="mb-2">Para el largo plazo (4-5 años):</p>
+              <p className="mb-2">Análisis de proyecciones a largo plazo:</p>
               <ul className="list-disc pl-6 space-y-1">
-                <li>Ambos segmentos muestran alta incertidumbre (56% Nearshore, 75% Domestic sin respuesta).</li>
-                <li>El porcentaje que proyecta crecimiento disminuye respecto a proyecciones a menor plazo (22% Nearshore, 25% Domestic).</li>
-                <li>Ningún cliente proyecta disminución, sugiriendo confianza básica en la relación.</li>
-                <li>La dificultad para proyectar a tan largo plazo sugiere la dinámica cambiante del mercado y refuerza la necesidad del reposicionamiento.</li>
+                <li><strong>Alta incertidumbre general:</strong> 56% Nearshore y 40% Domestic sin respuesta clara.</li>
+                <li><strong>Domestic más optimista:</strong> 40% proyecta estabilidad vs 22% Nearshore.</li>
+                <li><strong>Declive en expectativas de crecimiento:</strong> Reducción a ~20% ambos segmentos.</li>
+                <li><strong>Implicación estratégica:</strong> Necesidad de reposicionamiento para crear visión a largo plazo más clara.</li>
               </ul>
             </div>
           </CardContent>
@@ -166,12 +149,12 @@ export default function CicloVida() {
               height={300}
             />
             <div className="mt-4 text-sm">
-              <p className="mb-2">Análisis de oportunidades de crecimiento:</p>
+              <p className="mb-2">Análisis de oportunidades de expansión:</p>
               <ul className="list-disc pl-6 space-y-1">
-                <li>La "Implementación de nuevas tecnologías" es la principal oportunidad para ambos segmentos, con mayor énfasis en clientes Domestic (75% vs 56%).</li>
-                <li>Los clientes Domestic ven más oportunidades en todas las áreas, indicando mayor apertura a expandir y profundizar la relación.</li>
-                <li>Es destacable que ningún cliente Domestic seleccionó "Sin respuesta", mientras un 11% de clientes Nearshore sí lo hizo.</li>
-                <li>Las industrias con mayor interés en "Implementación de nuevas tecnologías" son Media/Entertainment, Technology, Healthcare (Nearshore) y Viajes/Hospitalidad, Automotriz, FMCG (Domestic).</li>
+                <li><strong>Tecnología como oportunidad principal:</strong> 64% promedio, con énfasis crítico en Domestic (80% vs 56%).</li>
+                <li><strong>Servicios actuales vs nuevos:</strong> Equilibrio entre expandir existentes (42%) y añadir nuevos (42%).</li>
+                <li><strong>Expansión geográfica:</strong> Interés consistente (~35%), especialmente relevante para crecimiento orgánico.</li>
+                <li><strong>Diferencia estratégica:</strong> Domestic prioriza tecnología, Nearshore balancea múltiples enfoques.</li>
               </ul>
             </div>
           </CardContent>
@@ -191,33 +174,10 @@ export default function CicloVida() {
             <div className="mt-4 text-sm">
               <p className="mb-2">Análisis de demanda por nuevos servicios:</p>
               <ul className="list-disc pl-6 space-y-1">
-                <li>Los clientes Domestic muestran significativamente mayor interés en servicios adicionales, particularmente en "Soluciones de IA" (75% vs 33%).</li>
-                <li>El interés en "Consultoría estratégica" solo aparece en clientes Nearshore (22% vs 0%).</li>
-                <li>Los clientes Domestic muestran alto interés en "Análisis avanzado de datos" (50% vs 11%), "Automatización de procesos" (50% vs 11%) y "Ventas" (50% vs 0%).</li>
-                <li>Las industrias con mayor interés en "Soluciones de IA" son Healthcare, Media/Entertainment, Technology (Nearshore) y Viajes/Hospitalidad, FMCG, Automotriz (Domestic).</li>
-              </ul>
-            </div>
-          </CardContent>
-        </Card>
-        
-        <Card>
-          <CardHeader>
-            <CardTitle>Áreas de Mejora para Mayor Alineación</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <BarChart 
-              data={improvementAreasData} 
-              keys={['Nearshore', 'Domestic']} 
-              subtitle="Áreas para mejor alineación con objetivos estratégicos" 
-              height={300}
-            />
-            <div className="mt-4 text-sm">
-              <p className="mb-2">Análisis de áreas de mejora:</p>
-              <ul className="list-disc pl-6 space-y-1">
-                <li>Ambos segmentos identifican las mismas tres áreas principales de mejora, pero con mayor énfasis en los clientes Domestic.</li>
-                <li>"Mejorar integración de tecnologías de punta" (75% Domestic vs 56% Nearshore) y "Fortalecer rol como socio estratégico" (75% Domestic vs 44% Nearshore) son las áreas más prioritarias.</li>
-                <li>Los clientes Domestic también dan mayor importancia a "Fortalecer capacitación y especialización" (50% vs 22%).</li>
-                <li>Las industrias que más enfatizan "Mejorar integración de tecnologías" son Technology, Media/Entertainment, Healthcare (Nearshore) y Viajes/Hospitalidad, Automotriz, Electrodomésticos (Domestic).</li>
+                <li><strong>IA como demanda principal:</strong> 43% promedio, con preferencia marcada en Domestic (60% vs 33%).</li>
+                <li><strong>Consultoría únicamente en Nearshore:</strong> 22% interés vs 0% Domestic, sugiriendo diferentes necesidades.</li>
+                <li><strong>Analytics y automatización en Domestic:</strong> 40% en ambos vs ~11% Nearshore, alineado con percepción tecnológica.</li>
+                <li><strong>Ventas como oportunidad Domestic:</strong> 40% vs 0%, indicando potencial para servicios comerciales.</li>
               </ul>
             </div>
           </CardContent>
@@ -241,52 +201,80 @@ export default function CicloVida() {
                 </thead>
                 <tbody>
                   <tr className="border-b">
-                    <td className="p-2">Healthcare</td>
-                    <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-purple text-white">Nearshore</span></td>
-                    <td className="p-2">Crecimiento</td>
-                    <td className="p-2">Nuevas tecnologías</td>
-                    <td className="p-2">Soluciones de IA</td>
-                  </tr>
-                  <tr className="border-b">
                     <td className="p-2">Retail/E-commerce</td>
                     <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-purple text-white">Nearshore</span></td>
-                    <td className="p-2">Crecimiento</td>
-                    <td className="p-2">Expandir a otras regiones</td>
+                    <td className="p-2">Probable crecimiento</td>
+                    <td className="p-2">Nuevas tecnologías</td>
                     <td className="p-2">Consultoría estratégica</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="p-2">Technology</td>
+                    <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-purple text-white">Nearshore</span></td>
+                    <td className="p-2">Se mantendrá igual</td>
+                    <td className="p-2">Expandir servicios</td>
+                    <td className="p-2">Soluciones IA</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="p-2">Media/Entertainment</td>
+                    <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-purple text-white">Nearshore</span></td>
+                    <td className="p-2">Se mantendrá igual</td>
+                    <td className="p-2">Nuevas tecnologías</td>
+                    <td className="p-2">Soluciones IA</td>
                   </tr>
                   <tr className="border-b">
                     <td className="p-2">Energy/Utilities</td>
                     <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-purple text-white">Nearshore</span></td>
-                    <td className="p-2">Crecimiento</td>
-                    <td className="p-2">Expandir servicios actuales</td>
-                    <td className="p-2">Sin interés específico</td>
+                    <td className="p-2">Probable crecimiento</td>
+                    <td className="p-2">Nuevas tecnologías</td>
+                    <td className="p-2">Análisis datos</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="p-2">Financial Services</td>
+                    <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-purple text-white">Nearshore</span></td>
+                    <td className="p-2">Se mantendrá igual</td>
+                    <td className="p-2">Expandir servicios</td>
+                    <td className="p-2">Back-office</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="p-2">Healthcare</td>
+                    <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-purple text-white">Nearshore</span></td>
+                    <td className="p-2">Probable crecimiento</td>
+                    <td className="p-2">Añadir servicios</td>
+                    <td className="p-2">Soluciones IA</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="p-2">Electrodomésticos</td>
+                    <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-magenta text-white">Domestic</span></td>
+                    <td className="p-2">Se mantendrá igual</td>
+                    <td className="p-2">Expandir servicios</td>
+                    <td className="p-2">Automatización</td>
                   </tr>
                   <tr className="border-b">
                     <td className="p-2">FMCG</td>
                     <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-magenta text-white">Domestic</span></td>
-                    <td className="p-2">Crecimiento</td>
+                    <td className="p-2">Probable crecimiento</td>
                     <td className="p-2">Nuevas tecnologías</td>
-                    <td className="p-2">Soluciones de IA</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="p-2">Automotriz</td>
-                    <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-magenta text-white">Domestic</span></td>
-                    <td className="p-2">Crecimiento</td>
-                    <td className="p-2">Nuevas tecnologías</td>
-                    <td className="p-2">Soluciones de IA, RPA</td>
+                    <td className="p-2">Ventas</td>
                   </tr>
                   <tr className="border-b">
                     <td className="p-2">Viajes/Hospitalidad</td>
                     <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-magenta text-white">Domestic</span></td>
-                    <td className="p-2">Disminución</td>
+                    <td className="p-2">Probable disminución</td>
+                    <td className="p-2">Expandir regiones</td>
+                    <td className="p-2">Soluciones IA</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="p-2">Automotriz</td>
+                    <td className="p-2"><span className="px-2 py-0.5 rounded text-xs bg-teleperformance-magenta text-white">Domestic</span></td>
+                    <td className="p-2">Probable crecimiento</td>
                     <td className="p-2">Nuevas tecnologías</td>
-                    <td className="p-2">Soluciones de IA, Análisis datos</td>
+                    <td className="p-2">Automatización</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <div className="mt-4 text-sm">
-              <p>Destaca que la industria de Viajes/Hospitalidad, a pesar de proyectar posible disminución a corto plazo, muestra alto interés en nuevas tecnologías y soluciones avanzadas, sugiriendo una oportunidad de reposicionamiento para revertir esa tendencia.</p>
+              <p><strong>Insight crítico:</strong> Viajes/Hospitalidad proyecta disminución a pesar de alta capacidad transformativa, sugiriendo oportunidad urgente de reposicionamiento con soluciones IA para revertir tendencia.</p>
             </div>
           </CardContent>
         </Card>
