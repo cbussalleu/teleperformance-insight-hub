@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Layout } from '@/components/Layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -7,7 +6,7 @@ export default function Metodologia() {
   return (
     <Layout 
       title="Metodología"
-      description="Detalles sobre el diseño y ejecución del estudio"
+      description="Detalles sobre el diseño y ejecución del estudio actualizado"
     >
       <div className="grid gap-6 animate-fade-in">
         <Card>
@@ -16,10 +15,10 @@ export default function Metodologia() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="flex items-center gap-4 p-4 border rounded-lg">
-              <div className="text-4xl font-bold text-teleperformance-purple">13</div>
+              <div className="text-4xl font-bold text-teleperformance-purple">14</div>
               <div>
                 <div className="font-semibold">Total de clientes entrevistados</div>
-                <div className="text-sm text-muted-foreground">Estudio cuantitativo con cuestionarios estructurados</div>
+                <div className="text-sm text-muted-foreground">Estudio cuantitativo con cuestionarios estructurados + entrevistas cualitativas</div>
               </div>
             </div>
             
@@ -46,7 +45,7 @@ export default function Metodologia() {
               <div className="p-4 border rounded-lg bg-teleperformance-magenta/10">
                 <div className="flex items-center justify-between">
                   <div className="font-semibold">Domestic</div>
-                  <div className="text-2xl font-bold text-teleperformance-magenta">4</div>
+                  <div className="text-2xl font-bold text-teleperformance-magenta">5</div>
                 </div>
                 <div className="text-sm text-muted-foreground mt-2">Clientes del mercado doméstico</div>
                 <div className="mt-4">
@@ -71,8 +70,32 @@ export default function Metodologia() {
             <div className="p-4 border rounded-lg">
               <h3 className="font-semibold mb-2">Cuestionarios Estructurados</h3>
               <div className="text-sm">
-                <p>Cuestionarios con 60 preguntas distribuidas en múltiples dimensiones de análisis.</p>
+                <p>Encuestas estructuradas con 60 preguntas en español e inglés, organizadas en 7 dimensiones de análisis.</p>
                 <p className="mt-2">Disponibles en español e inglés para facilitar la participación de clientes en diferentes mercados.</p>
+              </div>
+            </div>
+            
+            <div className="p-4 border rounded-lg bg-blue-50">
+              <h3 className="font-semibold mb-2">Entrevistas Cualitativas en Profundidad</h3>
+              <div className="text-sm">
+                <p className="mb-3">Complementadas con 3 entrevistas cualitativas para obtener insights específicos sobre percepciones, barreras y oportunidades.</p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                  <div className="p-3 bg-white border rounded">
+                    <h4 className="font-medium text-teleperformance-purple">NRG Energy</h4>
+                    <p className="text-xs text-gray-600">Senior Channel Manager</p>
+                    <p className="text-xs text-gray-600">8+ años relación, Sector Energía</p>
+                  </div>
+                  <div className="p-3 bg-white border rounded">
+                    <h4 className="font-medium text-teleperformance-magenta">Virpool</h4>
+                    <p className="text-xs text-gray-600">Encargado Servicio Cliente LATAM</p>
+                    <p className="text-xs text-gray-600">Servicios logística y personas</p>
+                  </div>
+                  <div className="p-3 bg-white border rounded">
+                    <h4 className="font-medium text-teleperformance-purple">Cliente Tecnología</h4>
+                    <p className="text-xs text-gray-600">Contexto transformación digital</p>
+                    <p className="text-xs text-gray-600">Expectativas proactividad</p>
+                  </div>
+                </div>
               </div>
             </div>
           </CardContent>
